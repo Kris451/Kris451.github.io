@@ -100,4 +100,4 @@ theme: life
 deploy:
   type: git
   repository: https://github.com/Kris451/Kris451.github.io
-  branch: master
+  branch: gh-pages
