@@ -99,5 +99,5 @@ theme: life
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/Kris451/Kris451.github.io
-  branch: gh-pages
+  repo: git@github.com:kris451/kris451.github.io
+  branch: master
