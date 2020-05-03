@@ -98,4 +98,6 @@ theme: life
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ''
+  type: git
+  repository: https://github.com/Kris451/Kris451.github.io
+  branch: master
