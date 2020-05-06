@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Kris&#39; blog</title>
+  
+  <subtitle>一个网站小白的博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://kris451.github.io/"/>
+  <updated>2020-05-06T03:20:35.489Z</updated>
+  <id>https://kris451.github.io/</id>
+  
+  <author>
+    <name>Kris</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搭建博客踩过的坑</title>
+    <link href="https://kris451.github.io/2020/05/06/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/"/>
+    <id>https://kris451.github.io/2020/05/06/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/</id>
+    <published>2020-05-06T02:58:53.000Z</published>
+    <updated>2020-05-06T03:20:35.489Z</updated>
+    
+    <content type="html"><![CDATA[<p>因node.js版本过高而部署错误的问题</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br><span class="line">(node:9876) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency</span><br><span class="line">(Use &#96;node --trace-warnings ...&#96; to show where the warning was created)</span><br><span class="line">(node:9876) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency</span><br><span class="line">(node:9876) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</span><br><span class="line">(node:9876) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency</span><br><span class="line">(node:9876) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency</span><br><span class="line">(node:9876) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</span><br><span class="line">hexo: 4.2.0</span><br><span class="line">hexo-cli: 3.1.0</span><br><span class="line">os: Windows_NT 10.0.18363 win32 x64</span><br><span class="line">node: 14.1.0</span><br><span class="line">v8: 8.1.307.30-node.30</span><br><span class="line">uv: 1.37.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.7</span><br><span class="line">ares: 1.16.0</span><br><span class="line">modules: 83</span><br><span class="line">nghttp2: 1.40.0</span><br><span class="line">napi: 6</span><br><span class="line">llhttp: 2.0.4</span><br><span class="line">openssl: 1.1.1f</span><br><span class="line">cldr: 36.1</span><br><span class="line">icu: 66.1</span><br><span class="line">tz: 2019c</span><br><span class="line">unicode: 13.0</span><br></pre></td></tr></table></figure><p>在用hexo建站的过程中，你是否看到了上面的代码？还有下面的：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br><span class="line">(node:3908) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency</span><br><span class="line">(Use &#96;node --trace-warnings ...&#96; to show where the warning was created)</span><br><span class="line">(node:3908) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency</span><br><span class="line">(node:3908) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</span><br><span class="line">(node:3908) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency</span><br><span class="line">(node:3908) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency</span><br><span class="line">(node:3908) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Files loaded in 94 ms</span><br><span class="line">INFO  0 files generated in 22 ms</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">FATAL Something&#39;s wrong. Maybe you can find the solution here: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.html</span><br><span class="line">TypeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object</span><br><span class="line">    at copyFile (fs.js:1890:10)</span><br><span class="line">    at tryCatcher (D:\Blog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at ret (eval at makeNodePromisifiedEval (D:\Node\node_global\node_modules\hexo-cli\node_modules\bluebird\js\release\promisify.js:184:12), &lt;anonymous&gt;:13:39)</span><br><span class="line">    at D:\Blog\node_modules\hexo-fs\lib\fs.js:144:39</span><br><span class="line">    at tryCatcher (D:\Blog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:547:31)</span><br><span class="line">    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)</span><br><span class="line">    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)</span><br><span class="line">    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)</span><br><span class="line">    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)</span><br><span class="line">    at Promise._resolveCallback (D:\Blog\node_modules\bluebird\js\release\promise.js:466:57)</span><br><span class="line">    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:559:17)</span><br><span class="line">    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)</span><br><span class="line">    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)</span><br><span class="line">    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)</span><br><span class="line">    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)</span><br><span class="line">    at Promise._resolveCallback (D:\Blog\node_modules\bluebird\js\release\promise.js:466:57)</span><br><span class="line">    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:559:17)</span><br><span class="line">    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)</span><br><span class="line">    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)</span><br><span class="line">    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)</span><br><span class="line">    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)</span><br></pre></td></tr></table></figure><p>在执行 <code>hexo s</code> 后，在<a href="localhost:4000">localhost:4000</a>中也能看到页面，但是在执行 <code>hexo d</code> 后，页面一直404.。。</p><p>在我查找原因的时候，知乎网友 @不秃头的小可爱 的<a href="https://zhuanlan.zhihu.com/p/136552969" target="_blank" rel="noopener">一篇文章</a>使我看到了曙光，原因是我安装的node版本过高，果断卸载后重装了node.js 12.14版本，问题解决。感谢大佬！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因node.js版本过高而部署错误的问题&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="hexo,  博客" scheme="https://kris451.github.io/tags/hexo-%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>速战速决的年轻人，也蛮可爱的</title>
+    <link href="https://kris451.github.io/2020/05/04/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/"/>
+    <id>https://kris451.github.io/2020/05/04/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/</id>
+    <published>2020-05-04T09:22:42.000Z</published>
+    <updated>2020-05-05T05:31:27.521Z</updated>
+    
+    <content type="html"><![CDATA[<p> <em>一篇摘自《vista看天下》的文章</em></p><img src="https://i.loli.net/2020/05/05/6fB1oxMliRjGaYc.jpg" alt="图片" style="zoom:50%;" /> <p>年轻是可以因为一点不满就迅速离开的，因为前面还有无数可能。</p><a id="more"></a><p>朋友的弟弟，年前谈了个女朋友，发展迅速。两人是一起搭顺风车认识的，没一个月，弟弟从朋友家里搬出来，说要跟女朋友同居去了。朋友一惊，本来弟弟说来上海工作，她正在准备看一套大一点的房子，两室一厅一人一个房间，这样弟弟不用睡沙发。</p><p>没想到这小子来上海的第一趟顺风车，就捞到个女朋友。我们都说，“好快啊，怎么这么快？”</p><p>朋友说，是啊，幸亏我还没开始找房子，现在的一室一厅，住着也挺好。</p><p>没多久过年了，朋友发来消息说：震惊，我弟弟居然分手了。</p><p>原因令人咋舌，弟弟谈的女朋友，是一个拿着几千块工资的普通上班族，结果被弟弟发现，她好像借了不少钱用在自己的奢侈品花销上。弟弟说，女人好可怕啊，她一个月才六千块钱，竟然要买一万多的手机。当即下定决心分手。</p><p>我和朋友感慨了一阵，弟弟真够斩立决的。年轻小女孩痴迷点名牌化妆品，要用最新款苹果手机，这些我们年轻時候也经历过，十分明白那种抓耳挠腮的感觉，好像拥有这些东西，就是自己过上优渥生活的绝佳证明。弟弟的看法是，这跟沉迷赌博有什么区别？</p><p>本来还想着，待在家这么长时间，弟弟会不会跟女朋友旧情复燃？说不定年轻人吵个架过几天就好了。但经过漫长的两个月后，终于再见到复工的朋友，带着依然单身的弟弟，一起去茶餐厅吃饭，年轻人一边啃鸡爪一边说：女人真的太可怕了，我最近都不要谈恋爱了。</p><p>弟弟复工没多久，又传来一个爆炸新闻，他主动辞职了，并且把老板臭骂了一顿。</p><p>真是血气方刚说走就走的年轻人。我听朋友说了事情的原委，弟弟是高尔夫球教练，最近工作刚刚转正，于是想着要下场好好练习一下，结果老板上来一句话，上班时间是给你用来练习的吗？</p><p>弟弟十分委屈，说不干就不干了。朋友又说：“还好还好，我本来又打算去看看两室一厅的房子呢。”</p><p>我跟朋友说：“你弟弟也太冲了，老板最近肯定压力很大，没人来打球还要付租金和工资，看到员工只能闲着下场去打球，自然急火攻心了嘛。”</p><p>说完这通话，我忽然意识到，自己真的是完完全全忍辱负重的中年人了，竟然觉得弟弟遭遇的事并没有什么辞职的必要，现在能找到份工作，还有愿意按时付工资的老板，多么不容易。进而又想到，弟弟的恋爱，如果我是他，也不会说分手就分手，总要给别人改正的机会嘛，再说下一个难道就会更好？</p><p>所以我再也不是年轻人了，忽然想到很多年前，跟弟弟一样年轻的时候，同样年轻的男朋友，送了我一根项链做生日礼物。我内心渴望的是一根有纪念价值的项链，18k金或者铂金都好，细细的一定很漂亮。结果看到他拿出一根绳子，上面坠着个不值钱的破玻璃，顿时气不打一处来，当即决定，分手吧，你根本不是真心对我。</p><p>年轻啊，年轻是可以因为一点不满就迅速离开的，因为前面还有无数可能。</p><p>然后，人到中年，万事都想着，可以妥协啊。那些原先觉得绝对不可能原谅的事，好像现在都有了理解的理由。中年人，走到这一步不容易，所以什么都不想再变了。</p><p>朋友怨恨地说：“我想换工作已经想了一年，没想到弟弟花一天就完成了。”</p><p>因为我们的人生，只剩很少可能了，总想着至少要保住现有的，哪里敢随便乱动。弟弟分了手又辞了职，笑着跟我们说，他要出门去旅游了，这下终于有空了。</p><p>真的，立刻想到了那年因为失恋出的远门，是唯有年轻人才会有的旅行。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt; &lt;em&gt;一篇摘自《vista看天下》的文章&lt;/em&gt;&lt;/p&gt;
+&lt;img src=&quot;https://i.loli.net/2020/05/05/6fB1oxMliRjGaYc.jpg&quot; alt=&quot;图片&quot; style=&quot;zoom:50%;&quot; /&gt; 
+
+&lt;p&gt;年轻是可以因为一点不满就迅速离开的，因为前面还有无数可能。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="vista看天下" scheme="https://kris451.github.io/tags/vista%E7%9C%8B%E5%A4%A9%E4%B8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://kris451.github.io/2020/05/04/hello-world/"/>
+    <id>https://kris451.github.io/2020/05/04/hello-world/</id>
+    <published>2020-05-03T16:00:00.000Z</published>
+    <updated>2020-05-05T02:10:41.338Z</updated>
+    
+    <content type="html"><![CDATA[<p>*<u>这是建站时自动创建的文章，文章列表空荡荡，暂时先留着吧。。。</u>*</p><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;*&lt;u&gt;这是建站时自动创建的文章，文章列表空荡荡，暂时先留着吧。。。&lt;/u&gt;*&lt;/p&gt;
+&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="博客首发" scheme="https://kris451.github.io/tags/%E5%8D%9A%E5%AE%A2%E9%A6%96%E5%8F%91/"/>
+    
+  </entry>
+  
+</feed>
