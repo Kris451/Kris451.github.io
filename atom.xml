@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Kris&#39; blog</title>
+  <title>莫逡巡的博客</title>
   
   <subtitle>一个网站小白的博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kris451.github.io/"/>
-  <updated>2020-05-07T01:37:02.035Z</updated>
+  <updated>2020-05-07T10:00:19.353Z</updated>
   <id>https://kris451.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网站主题更改</title>
+    <link href="https://kris451.github.io/2020/05/07/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9/"/>
+    <id>https://kris451.github.io/2020/05/07/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9/</id>
+    <published>2020-05-07T09:48:30.000Z</published>
+    <updated>2020-05-07T10:00:19.353Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天将博客主题换成了 <a href="https://hexo.fluid-dev.com/" target="_blank" rel="noopener">fluid</a> ，一个不错的主题，</p><p>感谢辛勤的开发者！</p><p>前一段时间一直用的 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">yilia</a> ，页面简单，我很喜欢，也是我入坑以后的第一个主题。可是有些方面似乎还不尽人意，比如在移动设备的优化方面。原开发者似乎也已弃坑。不过还是非常感谢ta的工作！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天将博客主题换成了 &lt;a href=&quot;https://hexo.fluid-dev.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;fluid&lt;/a&gt; ，一个不错的主题，&lt;/p&gt;
+&lt;p&gt;感谢辛勤的开发者！&lt;/p&gt;
+&lt;p&gt;前一段时间一直用的 &lt;a 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="hexo" scheme="https://kris451.github.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>搭建博客踩过的坑</title>
