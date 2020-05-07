@@ -56,7 +56,7 @@ ga('send', 'pageview');
   
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Kris' blog" type="application/atom+xml">
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -200,7 +200,7 @@ ga('send', 'pageview');
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">758字</span>
+        <span class="post-count">744字</span>
       </span>
     </span>
 
@@ -224,11 +224,72 @@ ga('send', 'pageview');
         <p>因node.js版本过高而部署错误的问题</p>
 <a id="more"></a>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br><span class="line">(node:9876) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency</span><br><span class="line">(Use &#96;node --trace-warnings ...&#96; to show where the warning was created)</span><br><span class="line">(node:9876) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency</span><br><span class="line">(node:9876) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</span><br><span class="line">(node:9876) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency</span><br><span class="line">(node:9876) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency</span><br><span class="line">(node:9876) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</span><br><span class="line">hexo: 4.2.0</span><br><span class="line">hexo-cli: 3.1.0</span><br><span class="line">os: Windows_NT 10.0.18363 win32 x64</span><br><span class="line">node: 14.1.0</span><br><span class="line">v8: 8.1.307.30-node.30</span><br><span class="line">uv: 1.37.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.7</span><br><span class="line">ares: 1.16.0</span><br><span class="line">modules: 83</span><br><span class="line">nghttp2: 1.40.0</span><br><span class="line">napi: 6</span><br><span class="line">llhttp: 2.0.4</span><br><span class="line">openssl: 1.1.1f</span><br><span class="line">cldr: 36.1</span><br><span class="line">icu: 66.1</span><br><span class="line">tz: 2019c</span><br><span class="line">unicode: 13.0</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-git"><code class="language-git">$ hexo -v
+(node:9876) Warning: Accessing non-existent property <span class="token string">'lineno'</span> of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9876) Warning: Accessing non-existent property <span class="token string">'column'</span> of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property <span class="token string">'filename'</span> of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property <span class="token string">'lineno'</span> of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property <span class="token string">'column'</span> of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property <span class="token string">'filename'</span> of module exports inside circular dependency
+hexo: 4.2.0
+hexo-cli: 3.1.0
+os: Windows_NT 10.0.18363 win32 x64
+node: 14.1.0
+v8: 8.1.307.30-node.30
+uv: 1.37.0
+zlib: 1.2.11
+brotli: 1.0.7
+ares: 1.16.0
+modules: 83
+nghttp2: 1.40.0
+napi: 6
+llhttp: 2.0.4
+openssl: 1.1.1f
+cldr: 36.1
+icu: 66.1
+tz: 2019c
+unicode: 13.0</code></pre>
 <p>在用hexo建站的过程中，你是否看到了上面的代码？还有下面的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br><span class="line">(node:3908) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency</span><br><span class="line">(Use &#96;node --trace-warnings ...&#96; to show where the warning was created)</span><br><span class="line">(node:3908) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency</span><br><span class="line">(node:3908) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</span><br><span class="line">(node:3908) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency</span><br><span class="line">(node:3908) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency</span><br><span class="line">(node:3908) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Files loaded in 94 ms</span><br><span class="line">INFO  0 files generated in 22 ms</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">FATAL Something&#39;s wrong. Maybe you can find the solution here: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.html</span><br><span class="line">TypeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object</span><br><span class="line">    at copyFile (fs.js:1890:10)</span><br><span class="line">    at tryCatcher (D:\Blog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at ret (eval at makeNodePromisifiedEval (D:\Node\node_global\node_modules\hexo-cli\node_modules\bluebird\js\release\promisify.js:184:12), &lt;anonymous&gt;:13:39)</span><br><span class="line">    at D:\Blog\node_modules\hexo-fs\lib\fs.js:144:39</span><br><span class="line">    at tryCatcher (D:\Blog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:547:31)</span><br><span class="line">    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)</span><br><span class="line">    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)</span><br><span class="line">    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)</span><br><span class="line">    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)</span><br><span class="line">    at Promise._resolveCallback (D:\Blog\node_modules\bluebird\js\release\promise.js:466:57)</span><br><span class="line">    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:559:17)</span><br><span class="line">    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)</span><br><span class="line">    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)</span><br><span class="line">    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)</span><br><span class="line">    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)</span><br><span class="line">    at Promise._resolveCallback (D:\Blog\node_modules\bluebird\js\release\promise.js:466:57)</span><br><span class="line">    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:559:17)</span><br><span class="line">    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)</span><br><span class="line">    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)</span><br><span class="line">    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)</span><br><span class="line">    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)</span><br></pre></td></tr></table></figure>
-
+<pre class=" language-git"><code class="language-git">$ hexo d -g
+(node:3908) Warning: Accessing non-existent property <span class="token string">'lineno'</span> of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:3908) Warning: Accessing non-existent property <span class="token string">'column'</span> of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property <span class="token string">'filename'</span> of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property <span class="token string">'lineno'</span> of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property <span class="token string">'column'</span> of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property <span class="token string">'filename'</span> of module exports inside circular dependency
+INFO  Start processing
+INFO  Files loaded in 94 ms
+INFO  0 files generated in 22 ms
+INFO  Deploying: git
+INFO  Clearing .deploy_git folder...
+INFO  Copying files from public folder...
+FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+TypeError [ERR_INVALID_ARG_TYPE]: The <span class="token string">"mode"</span> argument must be integer. Received an instance of Object
+    at copyFile (fs.js:1890:10)
+    at tryCatcher (D:\Blog\node_modules\bluebird\js\release\util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (D:\Node\node_global\node_modules\hexo-cli\node_modules\bluebird\js\release\promisify.js:184:12), &lt;anonymous>:13:39)
+    at D:\Blog\node_modules\hexo-fs\lib\fs.js:144:39
+    at tryCatcher (D:\Blog\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)
+    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)
+    at Promise._resolveCallback (D:\Blog\node_modules\bluebird\js\release\promise.js:466:57)
+    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:559:17)
+    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)
+    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)
+    at Promise._resolveCallback (D:\Blog\node_modules\bluebird\js\release\promise.js:466:57)
+    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:559:17)
+    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)
+    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)
+</code></pre>
 <p>在执行 <code>hexo s</code> 后，在<a href="localhost:4000">localhost:4000</a>中也能看到页面，但是在执行 <code>hexo d</code> 后，页面一直404.。。</p>
 <p>在我查找原因的时候，知乎网友 @不秃头的小可爱 的<a href="https://zhuanlan.zhihu.com/p/136552969" target="_blank" rel="noopener">一篇文章</a>使我看到了曙光，原因是我安装的node版本过高，果断卸载后重装了node.js 12.14版本，问题解决。感谢大佬！</p>
 
