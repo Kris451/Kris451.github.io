@@ -196,7 +196,6 @@
             <article class="markdown-body">
               <p>因node.js版本过高而部署错误的问题</p>
 <a id="more"></a>
-
 <pre class=" language-hljs git"><code class="language-hljs git">$ hexo -v
 (node:9876) Warning: Accessing non-existent property 'lineno' of module exports inside circular dependency
 (Use &#96;node --trace-warnings ...&#96; to show where the warning was created)
@@ -223,7 +222,6 @@ cldr: 36.1
 icu: 66.1
 tz: 2019c
 unicode: 13.0</code></pre>
-
 <p>在用hexo建站的过程中，你是否看到了上面的代码？还有下面的：</p>
 <pre class=" language-hljs git"><code class="language-hljs git">$ hexo d -g
 (node:3908) Warning: Accessing non-existent property 'lineno' of module exports inside circular dependency
@@ -263,7 +261,6 @@ TypeError [ERR_INVALID_ARG_TYPE]: The "mode" argument must be integer. Received 
     at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)
     at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)
     at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)</code></pre>
-
 <p>在执行 <code>hexo s</code> 后，在<a href="localhost:4000">localhost:4000</a>中也能看到页面，但是在执行 <code>hexo d</code> 后，页面一直404.。。</p>
 <p>在我查找原因的时候，知乎网友 @不秃头的小可爱 的<a href="https://zhuanlan.zhihu.com/p/136552969" target="_blank" rel="noopener">一篇文章</a>使我看到了曙光，原因是我安装的node版本过高，果断卸载后重装了node.js 12.14版本，问题解决。感谢大佬！</p>
 
