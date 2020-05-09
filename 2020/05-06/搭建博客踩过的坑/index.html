@@ -25,7 +25,7 @@
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/darcula.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/atom-one-dark.min.css" />
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -49,7 +49,7 @@
 
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="莫逡巡的博客" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -159,7 +159,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    750 字
+                    780 字
                   </span>
                 
 
@@ -169,7 +169,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    13
+                    14
                      分钟
                   </span>
                 
@@ -200,14 +200,14 @@
             <article class="markdown-body">
               <p>因node.js版本过高而部署错误的问题</p>
 <a id="more"></a>
-<div class="hljs"><pre class=" language-hljs git"><code class="language-hljs git">$ hexo -v
-(node:9876) Warning: Accessing non-existent property 'lineno' of module exports inside circular dependency
+<div class="hljs"><pre><code class="hljs git">$ hexo -v
+(node:9876) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency
 (Use &#96;node --trace-warnings ...&#96; to show where the warning was created)
-(node:9876) Warning: Accessing non-existent property 'column' of module exports inside circular dependency
-(node:9876) Warning: Accessing non-existent property 'filename' of module exports inside circular dependency
-(node:9876) Warning: Accessing non-existent property 'lineno' of module exports inside circular dependency
-(node:9876) Warning: Accessing non-existent property 'column' of module exports inside circular dependency
-(node:9876) Warning: Accessing non-existent property 'filename' of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency
 hexo: 4.2.0
 hexo-cli: 3.1.0
 os: Windows_NT 10.0.18363 win32 x64
@@ -227,25 +227,25 @@ icu: 66.1
 tz: 2019c
 unicode: 13.0</code></pre></div>
 <p>在用hexo建站的过程中，你是否看到了上面的代码？还有下面的：</p>
-<div class="hljs"><pre class=" language-hljs git"><code class="language-hljs git">$ hexo d -g
-(node:3908) Warning: Accessing non-existent property 'lineno' of module exports inside circular dependency
+<div class="hljs"><pre><code class="hljs git">$ hexo d -g
+(node:3908) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency
 (Use &#96;node --trace-warnings ...&#96; to show where the warning was created)
-(node:3908) Warning: Accessing non-existent property 'column' of module exports inside circular dependency
-(node:3908) Warning: Accessing non-existent property 'filename' of module exports inside circular dependency
-(node:3908) Warning: Accessing non-existent property 'lineno' of module exports inside circular dependency
-(node:3908) Warning: Accessing non-existent property 'column' of module exports inside circular dependency
-(node:3908) Warning: Accessing non-existent property 'filename' of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency
 INFO  Start processing
 INFO  Files loaded in 94 ms
 INFO  0 files generated in 22 ms
 INFO  Deploying: git
 INFO  Clearing .deploy_git folder...
 INFO  Copying files from public folder...
-FATAL Something's wrong. Maybe you can find the solution here: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.html
-TypeError [ERR_INVALID_ARG_TYPE]: The "mode" argument must be integer. Received an instance of Object
+FATAL Something&#39;s wrong. Maybe you can find the solution here: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.html
+TypeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object
     at copyFile (fs.js:1890:10)
     at tryCatcher (D:\Blog\node_modules\bluebird\js\release\util.js:16:23)
-    at ret (eval at makeNodePromisifiedEval (D:\Node\node_global\node_modules\hexo-cli\node_modules\bluebird\js\release\promisify.js:184:12), <anonymous>:13:39)
+    at ret (eval at makeNodePromisifiedEval (D:\Node\node_global\node_modules\hexo-cli\node_modules\bluebird\js\release\promisify.js:184:12), &lt;anonymous&gt;:13:39)
     at D:\Blog\node_modules\hexo-fs\lib\fs.js:144:39
     at tryCatcher (D:\Blog\node_modules\bluebird\js\release\util.js:16:23)
     at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:547:31)
