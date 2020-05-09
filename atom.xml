@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kris451.github.io/"/>
-  <updated>2020-05-08T10:03:00.286Z</updated>
+  <updated>2020-05-09T00:29:15.514Z</updated>
   <id>https://kris451.github.io/</id>
   
   <author>
@@ -18,22 +18,16 @@
   
   <entry>
     <title>微机笔记（一）</title>
-    <link href="https://kris451.github.io/2020/05/07/%E5%BE%AE%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-    <id>https://kris451.github.io/2020/05/07/%E5%BE%AE%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</id>
+    <link href="https://kris451.github.io/%E5%BE%AE%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>https://kris451.github.io/%E5%BE%AE%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</id>
     <published>2020-05-07T10:09:29.000Z</published>
-    <updated>2020-05-08T10:03:00.286Z</updated>
+    <updated>2020-05-09T00:29:15.514Z</updated>
     
-    <content type="html"><![CDATA[<p class="note note-success">一段每年必考的代码</p><pre class=" language-hljs Intel"><code class="language-hljs Intel">DATAREA SEGMENTSTRING1 DB      'Move the cursor backward.'STRING2 DB      'Move the cursor backward.'MESS1   DB      'Match.',13,10,'$'MESS2   DB      'No match.',13,10,'$'DATAREA ENDSPROGNAM SEGMENTMAIN    PROC    FAR        ASSUME  CS:PROGNAM,DS:DATAREA,ES:DATAREASTART:  PUSH    DS        SUB     AX,AX        PUSH    AX        MOV     AX,DATAREA        MOV     DS,AX        MOV     ES,AX        LEA     SI,STRING1        LEA     DI,STRING2        CLD        MOV     CX,STRING2-STRING1        REPZ    CMPSB        ？        LEA     DX,MESS2        ？MATCH:  LEA     DX,MESS1DISP:   MOV     AH,09H        INT     21H        RETMAIN    ENDPPROGNAM ENDS        END     START</code></pre>]]></content>
+    <content type="html"><![CDATA[<p><p class="note note-success">一段每年必考的代码</p><br><a id="more"></a><br><pre class=" language-hljs Intel"><code class="language-hljs Intel">DATAREA SEGMENTSTRING1 DB      'Move the cursor backward.'STRING2 DB      'Move the cursor backward.'MESS1   DB      'Match.',13,10,'$'MESS2   DB      'No match.',13,10,'$'DATAREA ENDSPROGNAM SEGMENTMAIN    PROC    FAR        ASSUME  CS:PROGNAM,DS:DATAREA,ES:DATAREASTART:  PUSH    DS        SUB     AX,AX        PUSH    AX        MOV     AX,DATAREA        MOV     DS,AX        MOV     ES,AX        LEA     SI,STRING1        LEA     DI,STRING2        CLD        MOV     CX,STRING2-STRING1        REPZ    CMPSB        ？        LEA     DX,MESS2        ？MATCH:  LEA     DX,MESS1DISP:   MOV     AH,09H        INT     21H        RETMAIN    ENDPPROGNAM ENDS        END     START</code></pre></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p class=&quot;note note-success&quot;&gt;一段每年必考的代码&lt;/p&gt;
-
-&lt;pre class=&quot; language-hljs Intel&quot;&gt;&lt;code class=&quot;language-hljs Intel&quot;&gt;DATAREA SEGMENT
-STRING1 DB  
-      
+      &lt;p&gt;&lt;p class=&quot;note note-success&quot;&gt;一段每年必考的代码&lt;/p&gt;&lt;br&gt;
     
     </summary>
     
@@ -47,8 +41,8 @@ STRING1 DB
   
   <entry>
     <title>网站主题更改</title>
-    <link href="https://kris451.github.io/2020/05/07/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9/"/>
-    <id>https://kris451.github.io/2020/05/07/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9/</id>
+    <link href="https://kris451.github.io/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9/"/>
+    <id>https://kris451.github.io/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9/</id>
     <published>2020-05-07T09:48:30.000Z</published>
     <updated>2020-05-07T10:00:19.353Z</updated>
     
@@ -73,8 +67,8 @@ STRING1 DB
   
   <entry>
     <title>搭建博客踩过的坑</title>
-    <link href="https://kris451.github.io/2020/05/06/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/"/>
-    <id>https://kris451.github.io/2020/05/06/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/</id>
+    <link href="https://kris451.github.io/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/"/>
+    <id>https://kris451.github.io/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/</id>
     <published>2020-05-06T02:58:53.000Z</published>
     <updated>2020-05-07T01:37:02.035Z</updated>
     
@@ -96,8 +90,8 @@ STRING1 DB
   
   <entry>
     <title>速战速决的年轻人，也蛮可爱的</title>
-    <link href="https://kris451.github.io/2020/05/04/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/"/>
-    <id>https://kris451.github.io/2020/05/04/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/</id>
+    <link href="https://kris451.github.io/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/"/>
+    <id>https://kris451.github.io/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/</id>
     <published>2020-05-04T09:22:42.000Z</published>
     <updated>2020-05-08T10:07:17.660Z</updated>
     
@@ -120,17 +114,16 @@ STRING1 DB
   
   <entry>
     <title>Hello World</title>
-    <link href="https://kris451.github.io/2020/05/04/hello-world/"/>
-    <id>https://kris451.github.io/2020/05/04/hello-world/</id>
+    <link href="https://kris451.github.io/hello-world/"/>
+    <id>https://kris451.github.io/hello-world/</id>
     <published>2020-05-03T16:00:00.000Z</published>
-    <updated>2020-05-05T02:10:41.338Z</updated>
+    <updated>2020-05-09T00:31:00.028Z</updated>
     
-    <content type="html"><![CDATA[<p><em><u>这是建站时自动创建的文章，文章列表空荡荡，暂时先留着吧。。。</u></em></p><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-hljs bash">$ hexo new <span class="hljs-string"><code class="language-hljs bash">$ hexo new <span class="hljs-string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-hljs bash"><code class="language-hljs bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-hljs bash"><code class="language-hljs bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-hljs bash"><code class="language-hljs bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p><p class="note note-info">这是建站时自动创建的文章，文章列表空荡荡，暂时先留着吧。。。</p><br><a id="more"></a><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-hljs bash">$ hexo new <span class="hljs-string"><code class="language-hljs bash">$ hexo new <span class="hljs-string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-hljs bash"><code class="language-hljs bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-hljs bash"><code class="language-hljs bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-hljs bash"><code class="language-hljs bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;em&gt;&lt;u&gt;这是建站时自动创建的文章，文章列表空荡荡，暂时先留着吧。。。&lt;/u&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
+      &lt;p&gt;&lt;p class=&quot;note note-info&quot;&gt;这是建站时自动创建的文章，文章列表空荡荡，暂时先留着吧。。。&lt;/p&gt;&lt;br&gt;
     
     </summary>
     

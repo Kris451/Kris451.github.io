@@ -19,7 +19,7 @@
   <meta name="description" content="记录生活">
   <meta name="author" content="莫逡巡">
   <meta name="keywords" content="生活">
-  <title>Hello World - 莫逡巡的博客</title>
+  <title>搭建博客踩过的坑 - 莫逡巡的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -44,8 +44,8 @@
 <!-- 自定义样式保持在最底部 -->
 
 
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="莫逡巡的博客" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"><link rel="alternate" href="/atom.xml" title="莫逡巡的博客" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -144,8 +144,8 @@
               
                 <div class="mt-3 post-meta">
                   <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-05-04 00:00">
-                    2020年5月4日 凌晨
+                  <time datetime="2020-05-06 10:58">
+                    2020年5月6日 上午
                   </time>
                 </div>
               
@@ -155,7 +155,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    100 字
+                    750 字
                   </span>
                 
 
@@ -165,7 +165,7 @@
                       <i class="iconfont icon-clock-fill"></i>
                     
                     
-                    1
+                    13
                      分钟
                   </span>
                 
@@ -194,16 +194,75 @@
           <div class="post-content mx-auto" id="post">
             
             <article class="markdown-body">
-              <p><em><u>这是建站时自动创建的文章，文章列表空荡荡，暂时先留着吧。。。</u></em></p>
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-hljs bash">$ hexo new <span class="hljs-string"><code class="language-hljs bash">$ hexo new <span class="hljs-string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-hljs bash"><code class="language-hljs bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-hljs bash"><code class="language-hljs bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-hljs bash"><code class="language-hljs bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+              <p>因node.js版本过高而部署错误的问题</p>
+<a id="more"></a>
+<pre class=" language-hljs git"><code class="language-hljs git">$ hexo -v
+(node:9876) Warning: Accessing non-existent property 'lineno' of module exports inside circular dependency
+(Use &#96;node --trace-warnings ...&#96; to show where the warning was created)
+(node:9876) Warning: Accessing non-existent property 'column' of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property 'filename' of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property 'lineno' of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property 'column' of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property 'filename' of module exports inside circular dependency
+hexo: 4.2.0
+hexo-cli: 3.1.0
+os: Windows_NT 10.0.18363 win32 x64
+node: 14.1.0
+v8: 8.1.307.30-node.30
+uv: 1.37.0
+zlib: 1.2.11
+brotli: 1.0.7
+ares: 1.16.0
+modules: 83
+nghttp2: 1.40.0
+napi: 6
+llhttp: 2.0.4
+openssl: 1.1.1f
+cldr: 36.1
+icu: 66.1
+tz: 2019c
+unicode: 13.0</code></pre>
+<p>在用hexo建站的过程中，你是否看到了上面的代码？还有下面的：</p>
+<pre class=" language-hljs git"><code class="language-hljs git">$ hexo d -g
+(node:3908) Warning: Accessing non-existent property 'lineno' of module exports inside circular dependency
+(Use &#96;node --trace-warnings ...&#96; to show where the warning was created)
+(node:3908) Warning: Accessing non-existent property 'column' of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property 'filename' of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property 'lineno' of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property 'column' of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property 'filename' of module exports inside circular dependency
+INFO  Start processing
+INFO  Files loaded in 94 ms
+INFO  0 files generated in 22 ms
+INFO  Deploying: git
+INFO  Clearing .deploy_git folder...
+INFO  Copying files from public folder...
+FATAL Something's wrong. Maybe you can find the solution here: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.html
+TypeError [ERR_INVALID_ARG_TYPE]: The "mode" argument must be integer. Received an instance of Object
+    at copyFile (fs.js:1890:10)
+    at tryCatcher (D:\Blog\node_modules\bluebird\js\release\util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (D:\Node\node_global\node_modules\hexo-cli\node_modules\bluebird\js\release\promisify.js:184:12), <anonymous>:13:39)
+    at D:\Blog\node_modules\hexo-fs\lib\fs.js:144:39
+    at tryCatcher (D:\Blog\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)
+    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)
+    at Promise._resolveCallback (D:\Blog\node_modules\bluebird\js\release\promise.js:466:57)
+    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:559:17)
+    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)
+    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)
+    at Promise._resolveCallback (D:\Blog\node_modules\bluebird\js\release\promise.js:466:57)
+    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:559:17)
+    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)
+    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)</code></pre>
+<p>在执行 <code>hexo s</code> 后，在<a href="localhost:4000">localhost:4000</a>中也能看到页面，但是在执行 <code>hexo d</code> 后，页面一直404.。。</p>
+<p>在我查找原因的时候，知乎网友 @不秃头的小可爱 的<a href="https://zhuanlan.zhihu.com/p/136552969" target="_blank" rel="noopener">一篇文章</a>使我看到了曙光，原因是我安装的node版本过高，果断卸载后重装了node.js 12.14版本，问题解决。感谢大佬！</p>
 
             </article>
             <hr>
@@ -214,7 +273,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%8D%9A%E5%AE%A2%E9%A6%96%E5%8F%91/">博客首发</a>
+                      <a class="hover-with-bg" href="/tags/hexo/">hexo</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
                     
                   </div>
                 
@@ -227,15 +288,21 @@
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2020/05/04/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/">
+                      <a href="/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">速战速决的年轻人，也蛮可爱的</span>
+                        <span class="hidden-mobile">网站主题更改</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </div>
                   <div class="post-next col-6">
                     
+                    
+                      <a href="/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/">
+                        <span class="hidden-mobile">速战速决的年轻人，也蛮可爱的</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </div>
                 </div>
@@ -406,7 +473,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Hello World&nbsp;",
+        "搭建博客踩过的坑&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
