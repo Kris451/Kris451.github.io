@@ -4,9 +4,36 @@
   
   
   <entry>
+    <title>电机笔记（一）</title>
+    <link href="/2020/05/10/%E7%94%B5%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <url>/2020/05/10/%E7%94%B5%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h1 id="电机中的基本电磁定律"><a href="#电机中的基本电磁定律" class="headerlink" title="电机中的基本电磁定律"></a>电机中的基本电磁定律</h1><div class="hljs"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"note note-primary"</span>&gt;</span>电机中的一些基本定律<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre></div><h2 id="全电流定律"><a href="#全电流定律" class="headerlink" title="全电流定律"></a>全电流定律</h2><p>则沿任意可包含所有这些导体的闭合路径$ l  $，磁场强度H 的线积分就等于这些导体电流的代数和，即</p><script type="math/tex; mode=display">\oint_{l} \boldsymbol{H} \cdot \mathrm{d} l=\sum_{i=1}^{n} I_{i}</script><p>这就是电机分析中使用的全电流定律（积分形式），亦称为安培环路定律。式中，电流的符号由右手螺旋法则确定，即当导, 体电流的方向与积分路径的方向呈右手螺旋关系时，该电流为正，反之为负。它是电机和变压器磁路分析与计算的基础。</p><h2 id="电磁感应定律"><a href="#电磁感应定律" class="headerlink" title="电磁感应定律"></a>电磁感应定律</h2><p>电流方向与磁通方向符合右手螺旋法则</p><script type="math/tex; mode=display">e=-N \frac{\mathrm{d} \Phi}{\mathrm{d} t}</script><p>导致磁通变化的原因可归纳为两大类： 一类是磁通由时变电流产生，即磁通是时间t 的函数；另一类是线圈与磁场间有相对运动，即磁通是位移变量x 的函数。综合起来，磁通的全增批就是</p><script type="math/tex; mode=display">\begin{array}{c}\mathrm{d} \Phi=\frac{\partial \Phi}{\partial t} \mathrm{d} t+\frac{\partial \Phi}{\partial x} \mathrm{d} x \\e=-N \frac{\partial \Phi}{\partial t}-N v \frac{\partial \Phi}{\partial x}=e_{\mathrm{T}}+e_{v}\end{array}</script><p>式中 <script type="math/tex">e__{\mathrm{T}}</script> 为变压器电动势，<script type="math/tex">e_{v}</script>为运动电动势</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>笔记</tag>
+      
+      <tag>电机</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>微机笔记（一）</title>
-    <link href="/2020/05-07/%E5%BE%AE%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-    <url>/2020/05-07/%E5%BE%AE%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <link href="/2020/05/07/%E5%BE%AE%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <url>/2020/05/07/%E5%BE%AE%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     
     <content type="html"><![CDATA[<p><p class="note note-success">一段每年必考的代码</p><br><a id="more"></a></p><h1 id="实验一-字符串匹配程序实验"><a href="#实验一-字符串匹配程序实验" class="headerlink" title="实验一 字符串匹配程序实验"></a>实验一 字符串匹配程序实验</h1><p>比较两个字符串STRING1和STRING2所含的字符是否相同，若相同则显示‘Match’，否则显示‘No Match’。</p><div class="hljs"><pre><code class="hljs Intel">DATAREA SEGMENTSTRING1 DB      &#39;Move the cursor backward.&#39;STRING2 DB      &#39;Move the cursor backward.&#39;MESS1   DB      &#39;Match.&#39;,13,10,&#39;$&#39;MESS2   DB      &#39;No match.&#39;,13,10,&#39;$&#39;DATAREA ENDSPROGNAM SEGMENTMAIN    PROC    FAR        ASSUME  CS:PROGNAM,DS:DATAREA,ES:DATAREASTART:  PUSH    DS        SUB     AX,AX        PUSH    AX        MOV     AX,DATAREA        MOV     DS,AX        MOV     ES,AX        LEA     SI,STRING1        LEA     DI,STRING2        CLD        MOV     CX,STRING2-STRING1        REPZ    CMPSB        ？        LEA     DX,MESS2        ？MATCH:  LEA     DX,MESS1DISP:   MOV     AH,09H        INT     21H        RETMAIN    ENDPPROGNAM ENDS        END     START</code></pre></div>]]></content>
     
@@ -32,8 +59,8 @@
   
   <entry>
     <title>网站主题更改</title>
-    <link href="/2020/05-07/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9/"/>
-    <url>/2020/05-07/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9/</url>
+    <link href="/2020/05/07/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9/"/>
+    <url>/2020/05/07/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9/</url>
     
     <content type="html"><![CDATA[<p>今天将博客主题换成了 <a href="https://hexo.fluid-dev.com/" target="_blank" rel="noopener">fluid</a> ，一个不错的主题，</p><p>感谢辛勤的开发者！</p><p>前一段时间一直用的 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">yilia</a> ，页面简单，我很喜欢，也是我入坑以后的第一个主题。可是有些方面似乎还不尽人意，比如在移动设备的优化方面。原开发者似乎也已弃坑。不过还是非常感谢ta的工作！</p>]]></content>
     
@@ -51,8 +78,8 @@
   
   <entry>
     <title>搭建博客踩过的坑</title>
-    <link href="/2020/05-06/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/"/>
-    <url>/2020/05-06/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/</url>
+    <link href="/2020/05/06/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/"/>
+    <url>/2020/05/06/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/</url>
     
     <content type="html"><![CDATA[<p>因node.js版本过高而部署错误的问题</p><a id="more"></a><div class="hljs"><pre><code class="hljs git">$ hexo -v(node:9876) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency(Use &#96;node --trace-warnings ...&#96; to show where the warning was created)(node:9876) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency(node:9876) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency(node:9876) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency(node:9876) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency(node:9876) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependencyhexo: 4.2.0hexo-cli: 3.1.0os: Windows_NT 10.0.18363 win32 x64node: 14.1.0v8: 8.1.307.30-node.30uv: 1.37.0zlib: 1.2.11brotli: 1.0.7ares: 1.16.0modules: 83nghttp2: 1.40.0napi: 6llhttp: 2.0.4openssl: 1.1.1fcldr: 36.1icu: 66.1tz: 2019cunicode: 13.0</code></pre></div><p>在用hexo建站的过程中，你是否看到了上面的代码？还有下面的：</p><div class="hljs"><pre><code class="hljs git">$ hexo d -g(node:3908) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency(Use &#96;node --trace-warnings ...&#96; to show where the warning was created)(node:3908) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency(node:3908) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency(node:3908) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency(node:3908) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency(node:3908) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependencyINFO  Start processingINFO  Files loaded in 94 msINFO  0 files generated in 22 msINFO  Deploying: gitINFO  Clearing .deploy_git folder...INFO  Copying files from public folder...FATAL Something&#39;s wrong. Maybe you can find the solution here: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.htmlTypeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object    at copyFile (fs.js:1890:10)    at tryCatcher (D:\Blog\node_modules\bluebird\js\release\util.js:16:23)    at ret (eval at makeNodePromisifiedEval (D:\Node\node_global\node_modules\hexo-cli\node_modules\bluebird\js\release\promisify.js:184:12), &lt;anonymous&gt;:13:39)    at D:\Blog\node_modules\hexo-fs\lib\fs.js:144:39    at tryCatcher (D:\Blog\node_modules\bluebird\js\release\util.js:16:23)    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:547:31)    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)    at Promise._resolveCallback (D:\Blog\node_modules\bluebird\js\release\promise.js:466:57)    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:559:17)    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)    at Promise._resolveCallback (D:\Blog\node_modules\bluebird\js\release\promise.js:466:57)    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:559:17)    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)</code></pre></div><p>在执行 <code>hexo s</code> 后，在<a href="localhost:4000">localhost:4000</a>中也能看到页面，但是在执行 <code>hexo d</code> 后，页面一直404.。。</p><p>在我查找原因的时候，知乎网友 @不秃头的小可爱 的<a href="https://zhuanlan.zhihu.com/p/136552969" target="_blank" rel="noopener">一篇文章</a>使我看到了曙光，原因是我安装的node版本过高，果断卸载后重装了node.js 12.14版本，问题解决。感谢大佬！</p>]]></content>
     
@@ -72,8 +99,8 @@
   
   <entry>
     <title>速战速决的年轻人，也蛮可爱的</title>
-    <link href="/2020/05-04/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/"/>
-    <url>/2020/05-04/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/</url>
+    <link href="/2020/05/04/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/"/>
+    <url>/2020/05/04/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/</url>
     
     <content type="html"><![CDATA[ <p class="note note-info">一篇摘自《vista看天下》的文章，<a class="btn" href="http://www.dazuig.com/shiz/ktx/609538.html" target="_blank" rel="noopener" title="点我阅读原文">阅读原文</a></p><p><img src="https://i.loli.net/2020/05/05/6fB1oxMliRjGaYc.jpg" srcset="/img/loading.gif" alt="图片" style="zoom:50%;" /> </p><p>年轻是可以因为一点不满就迅速离开的，因为前面还有无数可能。<br><a id="more"></a><br>朋友的弟弟，年前谈了个女朋友，发展迅速。两人是一起搭顺风车认识的，没一个月，弟弟从朋友家里搬出来，说要跟女朋友同居去了。朋友一惊，本来弟弟说来上海工作，她正在准备看一套大一点的房子，两室一厅一人一个房间，这样弟弟不用睡沙发。</p><p>没想到这小子来上海的第一趟顺风车，就捞到个女朋友。我们都说，“好快啊，怎么这么快？”</p><p>朋友说，是啊，幸亏我还没开始找房子，现在的一室一厅，住着也挺好。</p><p>没多久过年了，朋友发来消息说：震惊，我弟弟居然分手了。</p><p>原因令人咋舌，弟弟谈的女朋友，是一个拿着几千块工资的普通上班族，结果被弟弟发现，她好像借了不少钱用在自己的奢侈品花销上。弟弟说，女人好可怕啊，她一个月才六千块钱，竟然要买一万多的手机。当即下定决心分手。</p><p>我和朋友感慨了一阵，弟弟真够斩立决的。年轻小女孩痴迷点名牌化妆品，要用最新款苹果手机，这些我们年轻時候也经历过，十分明白那种抓耳挠腮的感觉，好像拥有这些东西，就是自己过上优渥生活的绝佳证明。弟弟的看法是，这跟沉迷赌博有什么区别？</p><p>本来还想着，待在家这么长时间，弟弟会不会跟女朋友旧情复燃？说不定年轻人吵个架过几天就好了。但经过漫长的两个月后，终于再见到复工的朋友，带着依然单身的弟弟，一起去茶餐厅吃饭，年轻人一边啃鸡爪一边说：女人真的太可怕了，我最近都不要谈恋爱了。</p><p>弟弟复工没多久，又传来一个爆炸新闻，他主动辞职了，并且把老板臭骂了一顿。</p><p>真是血气方刚说走就走的年轻人。我听朋友说了事情的原委，弟弟是高尔夫球教练，最近工作刚刚转正，于是想着要下场好好练习一下，结果老板上来一句话，上班时间是给你用来练习的吗？</p><p>弟弟十分委屈，说不干就不干了。朋友又说：“还好还好，我本来又打算去看看两室一厅的房子呢。”</p><p>我跟朋友说：“你弟弟也太冲了，老板最近肯定压力很大，没人来打球还要付租金和工资，看到员工只能闲着下场去打球，自然急火攻心了嘛。”</p><p>说完这通话，我忽然意识到，自己真的是完完全全忍辱负重的中年人了，竟然觉得弟弟遭遇的事并没有什么辞职的必要，现在能找到份工作，还有愿意按时付工资的老板，多么不容易。进而又想到，弟弟的恋爱，如果我是他，也不会说分手就分手，总要给别人改正的机会嘛，再说下一个难道就会更好？</p><p>所以我再也不是年轻人了，忽然想到很多年前，跟弟弟一样年轻的时候，同样年轻的男朋友，送了我一根项链做生日礼物。我内心渴望的是一根有纪念价值的项链，18k金或者铂金都好，细细的一定很漂亮。结果看到他拿出一根绳子，上面坠着个不值钱的破玻璃，顿时气不打一处来，当即决定，分手吧，你根本不是真心对我。</p><p>年轻啊，年轻是可以因为一点不满就迅速离开的，因为前面还有无数可能。</p><p>然后，人到中年，万事都想着，可以妥协啊。那些原先觉得绝对不可能原谅的事，好像现在都有了理解的理由。中年人，走到这一步不容易，所以什么都不想再变了。</p><p>朋友怨恨地说：“我想换工作已经想了一年，没想到弟弟花一天就完成了。”</p><p>因为我们的人生，只剩很少可能了，总想着至少要保住现有的，哪里敢随便乱动。弟弟分了手又辞了职，笑着跟我们说，他要出门去旅游了，这下终于有空了。</p><p>真的，立刻想到了那年因为失恋出的远门，是唯有年轻人才会有的旅行。</p>]]></content>
     
@@ -91,8 +118,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="/2020/05-04/hello-world/"/>
-    <url>/2020/05-04/hello-world/</url>
+    <link href="/2020/05/04/hello-world/"/>
+    <url>/2020/05/04/hello-world/</url>
     
     <content type="html"><![CDATA[<p><p class="note note-info">这是建站时自动创建的文章，文章列表空荡荡，暂时先留着吧。。。</p><br><a id="more"></a><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="hljs"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">"My New Post"</span></code></pre></div><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="hljs"><pre><code class="hljs bash">$ hexo server</code></pre></div><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="hljs"><pre><code class="hljs bash">$ hexo generate</code></pre></div><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="hljs"><pre><code class="hljs bash">$ hexo deploy</code></pre></div><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     

@@ -19,7 +19,7 @@
   <meta name="description" content="记录生活">
   <meta name="author" content="莫逡巡">
   <meta name="keywords" content="生活">
-  <title>莫逡巡的博客</title>
+  <title>搭建博客踩过的坑 - 莫逡巡的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -53,7 +53,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -144,7 +144,7 @@
 </nav>
 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('https://i.loli.net/2020/05/07/u4zGb1PRgY3lmDK.jpg') no-repeat center center;
+         style="background: url('https://i.loli.net/2020/05/07/NVRKUOwSsinrXzJ.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -154,12 +154,40 @@
             </span>
 
             
+              
+                <div class="mt-3 post-meta">
+                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+                  <time datetime="2020-05-06 10:58">
+                    2020年5月6日 上午
+                  </time>
+                </div>
+              
+
+              <div class="mt-1">
+                
+                  
+                  <span class="post-meta mr-2">
+                    <i class="iconfont icon-chart"></i>
+                    780 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta mr-2">
+                      <i class="iconfont icon-clock-fill"></i>
+                    
+                    
+                    14
+                     分钟
+                  </span>
+                
+
+                
+              </div>
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -168,252 +196,186 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>因node.js版本过高而部署错误的问题</p>
+<a id="more"></a>
+<div class="hljs"><pre><code class="hljs git">$ hexo -v
+(node:9876) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency
+(Use &#96;node --trace-warnings ...&#96; to show where the warning was created)
+(node:9876) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency
+(node:9876) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency
+hexo: 4.2.0
+hexo-cli: 3.1.0
+os: Windows_NT 10.0.18363 win32 x64
+node: 14.1.0
+v8: 8.1.307.30-node.30
+uv: 1.37.0
+zlib: 1.2.11
+brotli: 1.0.7
+ares: 1.16.0
+modules: 83
+nghttp2: 1.40.0
+napi: 6
+llhttp: 2.0.4
+openssl: 1.1.1f
+cldr: 36.1
+icu: 66.1
+tz: 2019c
+unicode: 13.0</code></pre></div>
+<p>在用hexo建站的过程中，你是否看到了上面的代码？还有下面的：</p>
+<div class="hljs"><pre><code class="hljs git">$ hexo d -g
+(node:3908) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency
+(Use &#96;node --trace-warnings ...&#96; to show where the warning was created)
+(node:3908) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency
+INFO  Start processing
+INFO  Files loaded in 94 ms
+INFO  0 files generated in 22 ms
+INFO  Deploying: git
+INFO  Clearing .deploy_git folder...
+INFO  Copying files from public folder...
+FATAL Something&#39;s wrong. Maybe you can find the solution here: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;troubleshooting.html
+TypeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer. Received an instance of Object
+    at copyFile (fs.js:1890:10)
+    at tryCatcher (D:\Blog\node_modules\bluebird\js\release\util.js:16:23)
+    at ret (eval at makeNodePromisifiedEval (D:\Node\node_global\node_modules\hexo-cli\node_modules\bluebird\js\release\promisify.js:184:12), &lt;anonymous&gt;:13:39)
+    at D:\Blog\node_modules\hexo-fs\lib\fs.js:144:39
+    at tryCatcher (D:\Blog\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)
+    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)
+    at Promise._resolveCallback (D:\Blog\node_modules\bluebird\js\release\promise.js:466:57)
+    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:559:17)
+    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)
+    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)
+    at Promise._resolveCallback (D:\Blog\node_modules\bluebird\js\release\promise.js:466:57)
+    at Promise._settlePromiseFromHandler (D:\Blog\node_modules\bluebird\js\release\promise.js:559:17)
+    at Promise._settlePromise (D:\Blog\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (D:\Blog\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (D:\Blog\node_modules\bluebird\js\release\promise.js:729:18)
+    at Promise._fulfill (D:\Blog\node_modules\bluebird\js\release\promise.js:673:18)</code></pre></div>
+<p>在执行 <code>hexo s</code> 后，在<a href="localhost:4000">localhost:4000</a>中也能看到页面，但是在执行 <code>hexo d</code> 后，页面一直404.。。</p>
+<p>在我查找原因的时候，知乎网友 @不秃头的小可爱 的<a href="https://zhuanlan.zhihu.com/p/136552969" target="_blank" rel="noopener">一篇文章</a>使我看到了曙光，原因是我安装的node版本过高，果断卸载后重装了node.js 12.14版本，问题解决。感谢大佬！</p>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/hexo/">hexo</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/05/07/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">网站主题更改</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/05/04/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/">
+                        <span class="hidden-mobile">速战速决的年轻人，也蛮可爱的</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
 
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/05/10/%E7%94%B5%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">电机笔记（一）</a>
-
-      <a href="/2020/05/10/%E7%94%B5%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="index-excerpt">
-        
-        
-          
-        
-        <div>电机中的基本电磁定律&lt;p class="note note-primary"&gt;电机中的一些基本定律&lt;/p&gt;
-全电流定律则沿任意可包含所有这些导体的闭合路径$ l  $，磁场强度H 的线积分就等于这些导体电流的代数和，即
-
-\oint_{l} \boldsymbol{H} \cdot \mathrm{d} l=\sum_{i=1}^{n} I_{i}这就是电机分析中使用的全电</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-05-10
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
-            
-              <a href="/tags/%E7%94%B5%E6%9C%BA/">电机</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script defer src="https://cdn.staticfile.org/valine/1.4.14/Valine.min.js" ></script>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/05/07/%E5%BE%AE%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">微机笔记（一）</a>
+  <script type="text/javascript">
+    var oldLoadVa = window.onload;
+    window.onload = function () {
+      oldLoadVa && oldLoadVa();
 
-      <a href="/2020/05/07/%E5%BE%AE%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="index-excerpt">
-        
-        
-          
-        
-        <div>一段每年必考的代码</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-05-07
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
-            
-              <a href="/tags/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/">微机原理与接口技术</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/05/07/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9/">网站主题更改</a>
-
-      <a href="/2020/05/07/%E7%BD%91%E7%AB%99%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9/" class="index-excerpt">
-        
-        
-          
-        
-        <div>今天将博客主题换成了 fluid ，一个不错的主题，
-感谢辛勤的开发者！
-前一段时间一直用的 yilia ，页面简单，我很喜欢，也是我入坑以后的第一个主题。可是有些方面似乎还不尽人意，比如在移动设备的优化方面。原开发者似乎也已弃坑。不过还是非常感谢ta的工作！
-</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-05-07
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/hexo/">hexo</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/05/06/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/">搭建博客踩过的坑</a>
-
-      <a href="/2020/05/06/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91/" class="index-excerpt">
-        
-        
-          
-        
-        <div>因node.js版本过高而部署错误的问题</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-05-06
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/hexo/">hexo</a>
-            
-              <a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/05/04/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/">速战速决的年轻人，也蛮可爱的</a>
-
-      <a href="/2020/05/04/%E9%80%9F%E6%88%98%E9%80%9F%E5%86%B3%E7%9A%84%E5%B9%B4%E8%BD%BB%E4%BA%BA%EF%BC%8C%E4%B9%9F%E6%8C%BA%E5%8F%AF%E7%88%B1%E7%9A%84/" class="index-excerpt">
-        
-        
-          
-        
-        <div>一篇摘自《vista看天下》的文章，阅读原文
-
- 
-年轻是可以因为一点不满就迅速离开的，因为前面还有无数可能。</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-05-04
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/vista%E7%9C%8B%E5%A4%A9%E4%B8%8B/">vista看天下</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <div class="col-12 col-md-12 mx-auto index-info">
-      <a class="index-header" href="/2020/05/04/hello-world/">Hello World</a>
-
-      <a href="/2020/05/04/hello-world/" class="index-excerpt">
-        
-        
-          
-        
-        <div>这是建站时自动创建的文章，文章列表空荡荡，暂时先留着吧。。。</div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-05-04
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%8D%9A%E5%AE%A2%E9%A6%96%E5%8F%91/">博客首发</a>
-            
-          </div>
-        
-      </div>
-    </div>
-  </div>
-
-
-
+      new Valine({
+        el: "#vcomments",
+        app_id: "SfK4JIjgbtAtlobGPbY985MJ-gzGzoHsz",
+        app_key: "5rdDP5gx5rT1Hi5wsMkaUW6R",
+        placeholder: "说点什么",
+        path: window.location.pathname,
+        avatar: "retro",
+        meta: ["nick","mail","link"],
+        pageSize: "10",
+        lang: "zh-CN",
+        highlight: true,
+        recordIP: false,
+        serverURLs: "",
+      });
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
 
 
               </div>
-            </div>
+            
           </div>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
   </main>
 
@@ -518,6 +480,34 @@
 
 
 
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
 
 
   <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
@@ -568,7 +558,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "蓬门今始为君开&nbsp;",
+        "搭建博客踩过的坑&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -613,6 +603,20 @@
   </script>
 
 
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
 
 
 
