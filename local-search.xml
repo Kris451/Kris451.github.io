@@ -8,7 +8,7 @@
     <link href="/2020/05-07/%E5%BE%AE%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <url>/2020/05-07/%E5%BE%AE%E6%9C%BA%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
     
-    <content type="html"><![CDATA[<p><p class="note note-success">一段每年必考的代码</p><br><a id="more"></a><br><div class="hljs"><pre><code class="hljs Intel">DATAREA SEGMENTSTRING1 DB      &#39;Move the cursor backward.&#39;STRING2 DB      &#39;Move the cursor backward.&#39;MESS1   DB      &#39;Match.&#39;,13,10,&#39;$&#39;MESS2   DB      &#39;No match.&#39;,13,10,&#39;$&#39;DATAREA ENDSPROGNAM SEGMENTMAIN    PROC    FAR        ASSUME  CS:PROGNAM,DS:DATAREA,ES:DATAREASTART:  PUSH    DS        SUB     AX,AX        PUSH    AX        MOV     AX,DATAREA        MOV     DS,AX        MOV     ES,AX        LEA     SI,STRING1        LEA     DI,STRING2        CLD        MOV     CX,STRING2-STRING1        REPZ    CMPSB        ？        LEA     DX,MESS2        ？MATCH:  LEA     DX,MESS1DISP:   MOV     AH,09H        INT     21H        RETMAIN    ENDPPROGNAM ENDS        END     START</code></pre></div></p>]]></content>
+    <content type="html"><![CDATA[<p><p class="note note-success">一段每年必考的代码</p><br><a id="more"></a></p><h1 id="实验一-字符串匹配程序实验"><a href="#实验一-字符串匹配程序实验" class="headerlink" title="实验一 字符串匹配程序实验"></a>实验一 字符串匹配程序实验</h1><p>比较两个字符串STRING1和STRING2所含的字符是否相同，若相同则显示‘Match’，否则显示‘No Match’。</p><div class="hljs"><pre><code class="hljs Intel">DATAREA SEGMENTSTRING1 DB      &#39;Move the cursor backward.&#39;STRING2 DB      &#39;Move the cursor backward.&#39;MESS1   DB      &#39;Match.&#39;,13,10,&#39;$&#39;MESS2   DB      &#39;No match.&#39;,13,10,&#39;$&#39;DATAREA ENDSPROGNAM SEGMENTMAIN    PROC    FAR        ASSUME  CS:PROGNAM,DS:DATAREA,ES:DATAREASTART:  PUSH    DS        SUB     AX,AX        PUSH    AX        MOV     AX,DATAREA        MOV     DS,AX        MOV     ES,AX        LEA     SI,STRING1        LEA     DI,STRING2        CLD        MOV     CX,STRING2-STRING1        REPZ    CMPSB        ？        LEA     DX,MESS2        ？MATCH:  LEA     DX,MESS1DISP:   MOV     AH,09H        INT     21H        RETMAIN    ENDPPROGNAM ENDS        END     START</code></pre></div>]]></content>
     
     
     <categories>
@@ -21,6 +21,8 @@
     <tags>
       
       <tag>笔记</tag>
+      
+      <tag>微机原理与接口技术</tag>
       
     </tags>
     
