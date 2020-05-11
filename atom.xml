@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kris451.github.io/"/>
-  <updated>2020-05-11T02:15:03.237Z</updated>
+  <updated>2020-05-11T09:53:24.212Z</updated>
   <id>https://kris451.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微机-8086CPU</title>
+    <link href="https://kris451.github.io/2020/05/11/%E5%BE%AE%E6%9C%BA%E7%AC%94%E8%AE%B0-8086CPU/"/>
+    <id>https://kris451.github.io/2020/05/11/%E5%BE%AE%E6%9C%BA%E7%AC%94%E8%AE%B0-8086CPU/</id>
+    <published>2020-05-11T09:00:48.000Z</published>
+    <updated>2020-05-11T09:53:24.212Z</updated>
+    
+    <content type="html"><![CDATA[<p>8086 CPU外部具有<span class="label label-primary">16根数据总线</span>，可并行传送16位数据信息；它具有<span class="label label-primary">20根地址总线</span>，能直接寻址2^20 =1 MB 内存空间；用低16位地址线访问I/0端口，可以访问$2 ^{16} =6 4K$个I/0端口。</p><h2 id="8086-CPU-内部结构"><a href="#8086-CPU-内部结构" class="headerlink" title="8086 CPU 内部结构"></a>8086 CPU 内部结构</h2><p><a href="https://sm.ms/image/9uO4g5eo8asCPlB" target="_blank"><img src="https://i.loli.net/2020/05/11/9uO4g5eo8asCPlB.png" srcset="/img/loading.gif" ></a></p><p class="note note-primary">由**总线接口单元**（BIU）和**指令执行单元**（EU）两大部分组成。</p><p>8088 的内部结构与8086基本相同， 不同之处在于： 8086的指令队列为6字节， 而8088为4 字节； 8086 BIU的外部数据总线为16位， 而8088 为8位。</p><h2 id="8086-CPU-内部寄存器"><a href="#8086-CPU-内部寄存器" class="headerlink" title="8086 CPU 内部寄存器"></a>8086 CPU 内部寄存器</h2><p><a href="https://sm.ms/image/VB5PHLTKNa8xqEY" target="_blank"><img src="https://i.loli.net/2020/05/11/VB5PHLTKNa8xqEY.png" srcset="/img/loading.gif" ></a></p><div class="table-container"><table><thead><tr><th style="text-align:center">寄存器</th><th style="text-align:center">代号</th></tr></thead><tbody><tr><td style="text-align:center">数据寄存器</td><td style="text-align:center">AX, BX, CX, DX</td></tr><tr><td style="text-align:center">地址指针和变址寄存器</td><td style="text-align:center">SP, DP, SI, DI</td></tr><tr><td style="text-align:center">段寄存器</td><td style="text-align:center">CS, DS, SS, ES</td></tr><tr><td style="text-align:center">指令指针</td><td style="text-align:center">IP</td></tr><tr><td style="text-align:center">标志寄存器</td><td style="text-align:center">FLAGS</td></tr></tbody></table></div><div class="table-container"><table><thead><tr><th>15</th><th></th><th></th><th></th><th>11</th><th></th><th></th><th></th><th>7</th><th></th><th></th><th></th><th>3</th><th></th><th></th><th>0</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td>OF</td><td>DF*</td><td>IF*</td><td>TF*</td><td>SF</td><td>ZF</td><td></td><td>AF</td><td></td><td>PF</td><td></td><td>CF</td></tr><tr><td></td><td></td><td></td><td></td><td>溢出标志位</td><td>方向标志</td><td>中断标志</td><td>陷阱标志</td><td>符号标志</td><td>零标志位</td><td></td><td>辅助进位标志</td><td></td><td>奇偶校验标志</td><td></td><td>进位标志</td></tr></tbody></table></div><p>*为控制标志，其余为状态标志。</p><h2 id="引脚功能"><a href="#引脚功能" class="headerlink" title="引脚功能"></a>引脚功能</h2><p><a href="https://sm.ms/image/fdHyWRLTcnjaAoI" target="_blank"><img src="https://i.loli.net/2020/05/11/fdHyWRLTcnjaAoI.png" srcset="/img/loading.gif" ></a></p><p>当MN/MX-= l 时， 工作于最小模式， 当MN/MX-=O 时， 工作于最大模式。图2. 3 中部分引脚信号有两种意义，带括号的为最大模式信号，不带括号的为最小模式信号。引脚信号线上的箭头指出了数据传送的方向，信号上加横杠表示低电平有效。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;8086 CPU外部具有&lt;span class=&quot;label label-primary&quot;&gt;16根数据总线&lt;/span&gt;，可并行传送16位数据信息；它具有&lt;span class=&quot;label label-primary&quot;&gt;20根地址总线&lt;/span&gt;，能直接寻址2^20 =
+      
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="https://kris451.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="微机" scheme="https://kris451.github.io/tags/%E5%BE%AE%E6%9C%BA/"/>
+    
+      <category term="笔记" scheme="https://kris451.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="8086CPU" scheme="https://kris451.github.io/tags/8086CPU/"/>
+    
+  </entry>
   
   <entry>
     <title>电机笔记（一）</title>
