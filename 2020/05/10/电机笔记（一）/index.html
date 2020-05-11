@@ -225,7 +225,7 @@ e=e_{\mathrm{T}}=-N_{\omega} \Phi_{\mathrm{m}} \cos \omega t=E_{\mathrm{m}} \sin
 <p><a href="https://sm.ms/image/3zJoktilZ5MOeXr" target="_blank"><img src="https://i.loli.net/2020/05/10/3zJoktilZ5MOeXr.png" srcset="/img/loading.gif" ></a></p>
 <p>在交流正弦分析中，相量的大小用有效值表示。感应电动势的有效值为</p>
 <script type="math/tex; mode=display">
-E=\frac{E_{\mathrm{m}}}{\sqrt{2}}=\frac{N_{\omega} \Phi_{\mathrm{m}}}{\sqrt{2}}=\sqrt{2} \pi f N \Phi_{\mathrm{m}}=4.44 \mathrm{fN} \Phi_{\mathrm{m}}</script><h3 id="运动电动势"><a href="#运动电动势" class="headerlink" title="运动电动势"></a>运动电动势</h3><script type="math/tex; mode=display">
+E=\frac{E_{\mathrm{m}}}{\sqrt{2}}=\frac{N \omega \Phi_{\mathrm{m}}}{\sqrt{2}}=\sqrt{2} \pi f N \Phi_{\mathrm{m}}=4.44 f N \Phi_{\mathrm{m}}</script><h3 id="运动电动势"><a href="#运动电动势" class="headerlink" title="运动电动势"></a>运动电动势</h3><script type="math/tex; mode=display">
 e=e_{v}=-N v l\left[B_{n}(x)-B_{n}(x+b)\right]=N \Delta B_{n} l v</script><p>显然，若希望磁场得到最充分利用，则磁场应只有垂直于线圈平面的分量，线圈一侧边与另一侧边处的磁场大小恒相等，但方向（极性）恒相反。事实上，这也是电机设计的基本准则。</p>
 <h2 id="电磁力定律"><a href="#电磁力定律" class="headerlink" title="电磁力定律"></a>电磁力定律</h2><p>对于长直载流导体，若磁场与之垂直，则计算电磁力大小的公式可简化为</p>
 <script type="math/tex; mode=display">
@@ -234,16 +234,18 @@ F=B l i</script><p>遵循左手定则。</p>
 <script type="math/tex; mode=display">
 T_{e}=Fr=Blir</script><p>最大</p>
 <script type="math/tex; mode=display">
-T_{\mathrm{cm}}=\sum_{j=1}^{M} T_{\mathrm{c} j}=M N B l i D</script><p>$ M $为总线圈个数；$ D $为转子直径。</p>
+T_{\mathrm{em}}=\sum_{j=1}^{M} T_{\mathrm{c} j}=M N B l i D</script><p>$ M $为总线圈个数；$ D $为转子直径。</p>
 <p>电磁转矩是制动性质的转矩，即电磁转矩的方向与拖动发电机的原动机的驱动转矩的方向相反，原动机的驱动转矩克服发电机内制动性质的电磁转矩而作功，机械能转换为电能。</p>
 <p>设$ P $为电机的电磁功率，$ Q $为电机气隙磁场旋转的机械角速度，则有</p>
 <script type="math/tex; mode=display">
 T_{\mathrm{em}}=\frac{P}{\Omega}</script><h2 id="铁磁材料特性"><a href="#铁磁材料特性" class="headerlink" title="铁磁材料特性"></a>铁磁材料特性</h2><p>电磁学中定义磁介质的磁导率为</p>
 <script type="math/tex; mode=display">
-\mu=\frac{\boldsymbol{B}}{\boldsymbol{H}}</script><p>式中，$ B $为磁感应强度（习惯称磁通密度）矢量；$ H $为磁场强度矢批；$μ$为磁导率张量。对于<br>均匀各向同性磁介质，$μ$为实数；显然， $B$ 和H$$ 是同方向的。</p>
-<p>铁磁材料包括铁、钻、锦及它们的合金。实验表明，所有非导磁材料的磁导率都是常数，并且都接近千真空磁导率炒， μo =4 <script type="math/tex">\pi</script>X 10-1 H/ m 。但铁磁材料却是非线性的，即其中B 与H 的比值不是常数，磁导率μ氏在较大的范围内变化，而且数值远大于吵，一般为μo 的数百乃至数千倍。对电机中常用的铁磁材料来说， <script type="math/tex">μ_{Fe}</script>在2 000 μ 0~6 000 μ。之间，因此，当线圈匝数和励磁电流相同时，铁芯线圈激发的磁通量比空心线圈的大得多，从而电机的体积也就可以减小。</p>
+\mu=\frac{\boldsymbol{B}}{\boldsymbol{H}}</script><p>式中，$B$为磁感应强度（习惯称磁通密度）矢量；$H$为磁场强度矢量；$\mu$为磁导率张量。对于<br>均匀各向同性磁介质，$\mu$为实数；显然， $B$ 和$H$ 是同方向的。</p>
+<p>铁磁材料包括铁、钻、锦及它们的合金。实验表明，所有非导磁材料的磁导率都是常数，并且都接近千真空磁导率<script type="math/tex">\mu_{0}</script>, <script type="math/tex">\mu_{0} =4 \pi * 10^{-7} H/m</script>。</p>
+<p>但铁磁材料却是非线性的，即其中$B$与$H$的比值不是常数，磁导率$\mu$在较大的范围内变化，而且数值远大于 <script type="math/tex">\mu_{0}</script> ，一般为<script type="math/tex">\mu_{0}</script>的数百乃至数千倍。</p>
+<p>对电机中常用的铁磁材料来说，<script type="math/tex">\mu_{Fe}</script> 在 <script type="math/tex">2000\mu_{0} ~ 6000\mu_{0}</script> 。之间，因此，当线圈匝数和励磁电流相同时，铁芯线圈激发的磁通量比空心线圈的大得多，从而电机的体积也就可以减小。</p>
 <p><a href="https://sm.ms/image/iD7WPt3ZVweSHMf" target="_blank"><img src="https://i.loli.net/2020/05/10/iD7WPt3ZVweSHMf.png" srcset="/img/loading.gif" ></a></p>
-<h2 id="磁滞亏磁滞损耗"><a href="#磁滞亏磁滞损耗" class="headerlink" title="磁滞亏磁滞损耗"></a>磁滞亏磁滞损耗</h2><p><a href="https://sm.ms/image/yWzQnd1CfUehKX4" target="_blank"><img src="https://i.loli.net/2020/05/10/yWzQnd1CfUehKX4.png" srcset="/img/loading.gif" ></a></p>
+<h2 id="磁滞与磁滞损耗"><a href="#磁滞与磁滞损耗" class="headerlink" title="磁滞与磁滞损耗"></a>磁滞与磁滞损耗</h2><p><a href="https://sm.ms/image/yWzQnd1CfUehKX4" target="_blank"><img src="https://i.loli.net/2020/05/10/yWzQnd1CfUehKX4.png" srcset="/img/loading.gif" ></a></p>
 <p>磁滞回线表明，上升磁化曲线与下降磁化曲线不重合，或者说，铁磁材料的磁化过程是不可逆的。不同铁磁材料有不同的磁滞回线。同一铁磁材料，其<script type="math/tex">B_{m}</script> 愈大，磁滞回线所包围的面积也愈大，因此，用不同的 B_{m} 值可测出不同的磁滞回线。</p>
 <p>铁芯磁滞损耗为</p>
 <script type="math/tex; mode=display">
@@ -255,7 +257,7 @@ p_{\mathrm{h}}=K_{\mathrm{h}} f B_{\mathrm{m}}^{a} V</script><p>$K_{h}$为不同
 p_{w}=\int_{0}^{d / 2} d p_{w}=\int_{0}^{d / 2} \frac{2 K^{2} f^{2} U b B_{m}^{2} x^{2}}{\rho} d x=\frac{K^{2} f^{2} d^{2} B_{m}^{2} V}{12 \rho}</script><p>要减少涡流损耗，首先应减小硅钢片厚度,目前一般厚度己做成0.5mm 和0.3mm 或更薄.</p>
 <h2 id="交流铁芯损耗"><a href="#交流铁芯损耗" class="headerlink" title="交流铁芯损耗"></a>交流铁芯损耗</h2><p>在电机和变压器的计算中，当铁芯内的磁场为交变磁场时，常将磁滞损耗和涡流损耗合在一起来计算，并统称为铁芯损耗，简称铁耗。单位重量中铁5耗的计算公式为</p>
 <script type="math/tex; mode=display">
-p_{\mathrm{Fe}}=p_{1 / 50}\left(\frac{f}{50}\right)^{\beta} B_{\mathrm{m}}^{2}</script><p><script type="math/tex">p_{1/50}</script>为铁耗系数，是指当<script type="math/tex">B_{m}</script>＝ 1 T 、$f$ = 50 Hz 时，每千克硅钢片的铁耗，其值在1. 05 ~ 2. 50 范围内；  <script type="math/tex">\beta</script>为频率指数，其值在1. 2 ~ 1. 6 范围内，随硅钢片的含钢量不同而异。</p>
+p_{\mathrm{Fe}}=p_{1 / 50}\left(\frac{f}{50}\right)^{\beta} B_{\mathrm{m}}^{2}</script><p><script type="math/tex">p_{1/50}</script>为铁耗系数，是指当<script type="math/tex">B_{m}</script>＝ 1 T 、$f$ = 50 Hz 时，每千克硅钢片的铁耗，其值在1.05 ~ 2.50 范围内；  <script type="math/tex">\beta</script>为频率指数，其值在1.2 ~ 1.6 范围内，随硅钢片的含钢量不同而异。</p>
 
             </article>
             <hr>
@@ -281,7 +283,7 @@ p_{\mathrm{Fe}}=p_{1 / 50}\left(\frac{f}{50}\right)^{\beta} B_{\mathrm{m}}^{2}</
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-NC-SA 4.0协议</a> 。转载请注明出处！</p>
               
               
                 <div class="post-prevnext row">
