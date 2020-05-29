@@ -168,7 +168,7 @@
                   
                   <span class="post-meta mr-2">
                     <i class="iconfont icon-chart"></i>
-                    153 字
+                    157 字
                   </span>
                 
 
@@ -230,9 +230,9 @@ START:  PUSH    DS
         CLD
         MOV     CX,STRING2-STRING1
         REPZ    CMPSB
-        ？
+        JZ		MATCH
         LEA     DX,MESS2
-        ？
+        JMP		DISP
 MATCH:  LEA     DX,MESS1
 DISP:   MOV     AH,09H
         INT     21H
