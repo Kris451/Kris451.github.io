@@ -314,9 +314,12 @@ post-content strong {
   display: none;
   box-shadow: 0 0 20px -5px rgba(158,158,158,0.2);
 }
-.beian,
-.statistics {
-  font-weight: 300;
+footer > div > div:not(:first-child) {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+}
+.statistics > span:last-child {
+  margin: 0 0.35rem;
 }
 a.beian-police {
   position: relative;
@@ -359,13 +362,16 @@ sup > a::before,
 .footnote-list ol {
   list-style-type: none;
   counter-reset: sectioncounter;
-  padding-left: 1em;
-  font-size: 0.9rem;
+  padding-left: 0.5rem;
+  font-size: 0.95rem;
 }
 .footnote-list ol li:before {
   font-family: "Helvetica Neue", monospace, "Monaco";
   content: "[" counter(sectioncounter) "]";
   counter-increment: sectioncounter;
+}
+.footnote-list ol li+li {
+  margin-top: 0.5rem;
 }
 .footnote-text {
   padding-left: 0.5em;
@@ -591,17 +597,8 @@ sup > a::before,
 .navbar .dropdown-item:hover {
   color: #1abc9c;
 }
-@supports (-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px)) {
-  .navbar .dropdown-collapse {
-    background: rgba(47,65,84,0.7);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-  }
-}
-@supports not ((-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px))) {
-  .navbar .dropdown-collapse {
-    background: #2f4154;
-  }
+.navbar .dropdown-collapse {
+  background-color: #2f4154;
 }
 .navbar-custom {
   color: white;
@@ -609,29 +606,11 @@ sup > a::before,
 .navbar-custom a {
   color: white;
 }
-@supports (-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px)) {
-  .top-nav-collapse {
-    background: rgba(47,65,84,0.7);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-  }
+.top-nav-collapse {
+  background-color: #2f4154;
 }
-@supports not ((-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px))) {
-  .top-nav-collapse {
-    background: #2f4154;
-  }
-}
-@supports (-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px)) {
-  .navbar-col-show {
-    background: rgba(47,65,84,0.7);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-  }
-}
-@supports not ((-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px))) {
-  .navbar-col-show {
-    background: #2f4154;
-  }
+.navbar-col-show {
+  background-color: #2f4154;
 }
 @media (max-width: 767px) {
   .navbar {
